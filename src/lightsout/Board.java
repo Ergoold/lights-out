@@ -8,7 +8,7 @@ public class Board {
     /**
      * The size (width and height) of a board.
      */
-    public final static int SIZE = 5;
+    public static final int SIZE = 5;
 
     /**
      * All of the lights on the board.
