@@ -1,0 +1,6 @@
+# Compiled Files
+out/
+
+# IntelliJ Configuration Files
+.idea/
+*.iml
