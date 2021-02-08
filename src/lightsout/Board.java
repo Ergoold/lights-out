@@ -53,6 +53,8 @@ public class Board {
      * @param y the y coordinate of the tile
      */
     private void toggle(int x, int y) {
-        lights[x][y] = !lights[x][y];
+        if (0 <= x && x < 5)
+            if (0 <= y && y < 5)
+                lights[x][y] = !lights[x][y];
     }
 }

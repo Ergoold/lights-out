@@ -2,6 +2,8 @@ package lightsout;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * A pane containing a lights out game.
@@ -36,6 +38,14 @@ public class LightPane extends JPanel {
     public LightPane() {
         setPreferredSize(new Dimension(SIZE * Board.SIZE, SIZE * Board.SIZE));
         setFocusable(true);
+
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                board.click(e.getX() / SIZE, e.getY() / SIZE);
+                repaint();
+            }
+        });
     }
 
     @Override
