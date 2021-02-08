@@ -1,5 +1,7 @@
 package lightsout;
 
+import java.util.Random;
+
 /**
  * A lights-out board.
  */
@@ -16,6 +18,15 @@ public class Board {
      * There are {@code SIZE} rows of lights and {@code SIZE} lights in each row, and each light can be on or off.
      */
     private final boolean[][] lights = new boolean[SIZE][SIZE];
+
+    /**
+     * Constructs a new board with a random valid light pattern.
+     */
+    public Board() {
+        Random r = new Random();
+        for (int i = 0; i < 10; i++)
+            click(r.nextInt(5), r.nextInt(5));
+    }
 
     /**
      * Checks whether the light on tile ({@code x}, {@code y}) is on.
