@@ -11,7 +11,7 @@ public class LightPane extends JPanel {
     /**
      * The size of each tile, in pixels.
      */
-    private static final int SIZE = 20;
+    private static final int SIZE = 50;
 
     /**
      * The color that tiles that are on are filled with.
@@ -22,6 +22,11 @@ public class LightPane extends JPanel {
      * The color that tiles that are off are filled with.
      */
     private static final Color OFF_COLOR = Color.GRAY;
+
+    /**
+     * The color of the border between tiles.
+     */
+    private static final Color BORDER_COLOR = Color.BLACK;
 
     /**
      * The lights out game board displayed on this pane.
@@ -39,6 +44,8 @@ public class LightPane extends JPanel {
             for (int j = 0; j < Board.SIZE; j++) { // cols (x)
                 g.setColor(board.isOn(j, i) ? ON_COLOR : OFF_COLOR);
                 g.fillRect(j * SIZE, i * SIZE, SIZE, SIZE);
+                g.setColor(BORDER_COLOR);
+                g.drawRect(j * SIZE, i * SIZE, SIZE, SIZE);
             }
     }
 }
