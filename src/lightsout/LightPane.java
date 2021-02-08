@@ -50,6 +50,7 @@ public class LightPane extends JPanel {
                             JOptionPane.OK_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
                     if (option == JOptionPane.CANCEL_OPTION) System.exit(0);
                     board = new Board();
+                    repaint();
                 }
             }
         });
