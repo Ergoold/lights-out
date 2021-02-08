@@ -44,6 +44,13 @@ public class LightPane extends JPanel {
             public void mouseReleased(MouseEvent e) {
                 board.click(e.getX() / SIZE, e.getY() / SIZE);
                 repaint();
+                if (board.isClear()) {
+                    int option = JOptionPane.showConfirmDialog(LightPane.this,
+                            "You Win! Play Again?", "WinError",
+                            JOptionPane.OK_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
+                    if (option == JOptionPane.CANCEL_OPTION) System.exit(0);
+                    board = new Board();
+                }
             }
         });
     }

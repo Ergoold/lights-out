@@ -40,6 +40,19 @@ public class Board {
     }
 
     /**
+     * Checks whether all tiles on the board are off.
+     *
+     * @return {@code true} if all tiles are off, {@code false} otherwise
+     */
+    public boolean isClear() {
+        for (int x = 0; x < 5; x++)
+            for (int y = 0; y < 5; y++)
+                if (lights[x][y])
+                    return false;
+        return true;
+    }
+
+    /**
      * Performs a click on the tile at ({@code x}, {@code y}).
      * <p>
      * This toggles the tile and all it shares an edge with.
